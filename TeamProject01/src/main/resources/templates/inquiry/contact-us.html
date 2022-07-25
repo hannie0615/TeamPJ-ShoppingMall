@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>로그인</title>
+    <title>연락하기</title>
 
     <!-- FAVICON -->
     <link href="../../static/img/favicon.png" rel="shortcut icon">
@@ -38,7 +38,6 @@
 
 <body class="body-wrapper">
 
-
 <section>
 	<div class="container">
 		<div class="row">
@@ -62,7 +61,7 @@
 
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="dashboard.html">Dashboard</a>
+									<a class="dropdown-item" href="../myPage/dashboard.html">Dashboard</a>
 									<a class="dropdown-item" href="dashboard-my-ads.html">Dashboard My Ads</a>
 									<a class="dropdown-item" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a>
 									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
@@ -75,15 +74,15 @@
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="about-us.html">About Us</a>
+									<a class="dropdown-item" href="../about-us.html">About Us</a>
 									<a class="dropdown-item" href="contact-us.html">Contact Us</a>
-									<a class="dropdown-item" href="user-profile.html">User Profile</a>
+									<a class="dropdown-item" href="../user-profile.html">User Profile</a>
 									<a class="dropdown-item" href="404.html">404 Page</a>
 									<a class="dropdown-item" href="package.html">Package</a>
-									<a class="dropdown-item" href="single.html">Single Page</a>
-									<a class="dropdown-item" href="store.html">Store Single</a>
-									<a class="dropdown-item" href="single-blog.html">Single Post</a>
-									<a class="dropdown-item" href="blog.html">Blog</a>
+									<a class="dropdown-item" href="../goods/single.html">Single Page</a>
+									<a class="dropdown-item" href="../store.html">Store Single</a>
+									<a class="dropdown-item" href="../single-blog.html">Single Post</a>
+									<a class="dropdown-item" href="../blog.html">Blog</a>
 
 								</div>
 							</li>
@@ -93,14 +92,14 @@
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="category.html">Ad-Gird View</a>
+									<a class="dropdown-item" href="../category.html">Ad-Gird View</a>
 									<a class="dropdown-item" href="ad-listing-list.html">Ad-List View</a>
 								</div>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<a class="nav-link login-button" href="login.html">Login</a>
+								<a class="nav-link login-button" href="../member/login.html">Login</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
@@ -113,30 +112,66 @@
 	</div>
 </section>
 
-<section class="login py-5 border-top-1">
+<!-- page title -->
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+				<h3>Contact Us</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!-- page title -->
+
+<!-- contact us start-->
+<section class="section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
-                <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-us-content p-4">
+                    <h5>Contact Us</h5>
+                    <h1 class="pt-3">Hello, what's on your mind?</h1>
+                    <p class="pt-3 pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, blandit vel euismod ac, lentesque et dolor. Ut id tempus ipsum.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
                     <form action="#">
                         <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                    <input type="checkbox" id="keep-me-logged-in">
-                                    <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 py-2">
+                                        <input type="text" placeholder="Name *" class="form-control" required>
+                                    </div>
+                                    <div class="col-lg-6 pt-2">
+                                        <input type="email" placeholder="Email *" class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
+                            <select name="" id="" class="form-control w-100">
+                                <option value="1">Select Category</option>
+                                <option value="1">Laptop</option>
+                                <option value="1">iPhone</option>
+                                <option value="1">Monitor</option>
+                                <option value="1">I need</option>
+                            </select>
+                            <textarea name="message" id=""  placeholder="Message *" class="border w-100 p-3 mt-3 mt-lg-4"></textarea>
+                            <div class="btn-grounp">
+                                <button type="submit" class="btn btn-primary mt-2 float-right">SUBMIT</button>
+                            </div>
                         </fieldset>
                     </form>
-                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- contact us end -->
 
 <!--============================
 =            Footer            =
@@ -175,12 +210,12 @@
         <div class="block">
           <h4>Admin Pages</h4>
           <ul>
-            <li><a href="category.html">Category</a></li>
-            <li><a href="single.html">Single Page</a></li>
-            <li><a href="store.html">Store Single</a></li>
-            <li><a href="single-blog.html">Single Post</a>
+            <li><a href="../category.html">Category</a></li>
+            <li><a href="../goods/single.html">Single Page</a></li>
+            <li><a href="../store.html">Store Single</a></li>
+            <li><a href="../single-blog.html">Single Post</a>
             </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="../blog.html">Blog</a></li>
 
 
 
