@@ -16,4 +16,11 @@ public class pageController {
     public String goLogin(){
         return "member/login";
     }
+
+    @PostMapping("/addlist")
+    public String goAddList(){
+        return "goods/ad-list-view";
+    }
+
+
 }
