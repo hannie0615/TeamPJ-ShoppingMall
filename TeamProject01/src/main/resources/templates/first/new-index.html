@@ -6,25 +6,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index</title>
+    <title>첫 화면</title>
 
     <!-- FAVICON -->
-    <link href="img/favicon.png" rel="shortcut icon">
+    <link href="../../static/images/favicon.png" rel="shortcut icon">
     <!-- PLUGINS CSS STYLE -->
     <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap-slider.css">
     <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../../static/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="../../static/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../../static/css/style.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -35,7 +35,9 @@
     <![endif]-->
 
 </head>
+
 <body class="body-wrapper">
+
 
 <section>
     <div class="container">
@@ -89,14 +91,13 @@
                         <ul class="navbar-nav ml-auto mt-10">
                             <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
+                                <a class="nav-link login-button" href="#">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
+                                <a class="nav-link login-button" href="#">Register</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="javascript:void(0)" onclick="aTagPost('/addlist')">
-                                    <i class="fa fa-plus-circle"></i>Add Goods</a>
+                                <a class="nav-link text-white add-button" href="#"><i class="fa fa-plus-circle"></i>Add Goods</a>
                             </li>
                         </ul>
                     </div>
@@ -105,47 +106,34 @@
         </div>
     </div>
 </section>
-<div style="position: absolute; top:200px; width: 100%">
-    <section class="page-search">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advance Search -->
-                    <div class="advance-search">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-8">
-                                    <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-                                </div>
-                                <div class="form-group col-md-1"></div>
-                                <div class="form-group col-md-2">
-                                    <!-- 6. 상품 DB에서 find 하기 -->
-                                    <button type="submit" class="btn btn-primary">Search Now</button>
-                                </div>
+<div style="position: absolute; top:200px; width: 100%; height: 30%">
+<section class="page-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advance Search -->
+                <div class="advance-search">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
                             </div>
-                        </form>
-                    </div>
+                            <div class="form-group col-md-1"></div>
+                            <div class="form-group col-md-2">
+                                <!-- 6. 상품 DB에서 find 하기 -->
+                                <button type="submit" class="btn btn-primary">Search Now</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </div>
 </body>
 
 <!-- 요 아래로 상품 뷰 쭉 보여주기 -->
 
 
-
-
-<script>
-    let url;
-    function aTagPost(url){
-        let f = document.createElement('form');
-        f.setAttribute('method', 'post');
-        f.setAttribute('action', url);
-        document.body.appendChild(f);
-        f.submit();
-    }
-</script>
-</body>
 </html>
