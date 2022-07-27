@@ -21,6 +21,10 @@ public class pageController {
     public String goAddList(){
         return "goods/ad-list-view";
     }
+    @PostMapping("/login/findID")
+    public String goFindID(){
+        return "member/findID";
+    }
 
 
 }
