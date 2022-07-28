@@ -11,7 +11,7 @@ create table member (
                         addr02 varchar(20) NOT NULL,
                         addr03 varchar(50) NOT NULL,
                         r_date01 date NOT NULL,
-                        p_time timestamp not null default current_timestamp,
+                        p_time timestamp NOT NULL
 );
 
 # <!--후기게시판-->
