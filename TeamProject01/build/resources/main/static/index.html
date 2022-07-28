@@ -6,20 +6,5 @@
 </head>
 <body>
 <h2>This is index page</h2>
-
-<a href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
-<a href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
-<a href="javascript:void(0)" onclick="aTagPost('/addlist')"> About Us</a>
-
-<script>
-    let url;
-    function aTagPost(url){
-        let f = document.createElement('form');
-        f.setAttribute('method', 'post');
-        f.setAttribute('action', url);
-        document.body.appendChild(f);
-        f.submit();
-    }
-</script>
 </body>
 </html>
