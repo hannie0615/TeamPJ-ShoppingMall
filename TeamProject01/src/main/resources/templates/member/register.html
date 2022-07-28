@@ -1,3 +1,5 @@
+<!-- siteKey : 6LfwkSMhAAAAANT8PFbDADKCahVMq38cTGL3rUs2 -->
+<!-- secretKey : 6LfwkSMhAAAAALSb6uXk4bitKrn48ZkUzOGctLX0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +36,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Daum Address API-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
@@ -50,6 +53,27 @@
         })
     </script>
 
+    <!-- Register Content Final Validation(Google recaptcha API)-->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+    <style>
+        .error{
+            color: red;
+            min-height: 20px;
+        }
+        .dupTestMsgF{
+            color: red;
+            font-style: normal;
+        }
+        .dupTestMsgT{
+            color: blue;
+            font-style: normal;
+        }
+        #user_id-error{
+            margin: 0;
+        }
+        body {margin:0;}
+    </style>
 </head>
 
 <body class="body-wrapper">
@@ -135,25 +159,32 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border border">
                     <h3 class="bg-gray p-4">Register Now</h3>
-                    <form action="#">
+                    <form action="members/new" method="post" id="registration" onsubmit="return formSubmit()">
                         <fieldset class="p-4">
-                            <input type="email" placeholder="Email*" class="border p-3 w-100 my-2">
-                            <input type="text" placeholder="Id*" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password*" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Confirm Password*" class="border p-3 w-100 my-2">
-                            <input type="text" placeholder="name*" class="border p-3 w-100 my-2">
-                            <input type="text" placeholder="Nickname*" class="border p-3 w-100 my-2" >
-                            <input type="text" id="zonecode" name="zonecode" class="border p-2 w-50 my-2" readonly style="float: left">
+                            <input type="email" placeholder="Email*" class="border p-3 w-100 my-2" name="email01"><br>
+                            <input type="text" id="user_id" placeholder="Id*" class="border p-3 w-75 mt-2" name="id01" style="float: left">
+                            <input type="button" class="btn btn-primary ml-2 mt-3 px-1 py-2 text-white border-0 rounded font-weight-bold"
+                                   name="find_button" id="duplicate_check" value="중복검사">
+                            <label id="user_id-error" class="error" for="user_id"></label>
+                            <label for="duplicate_check" id="dupTestMsg"></label>
+                            <input type="password" placeholder="Password*" class="border mt-3 p-3 w-100 mb-2" name="pwd01" id="pwd01">
+                            <input type="password" placeholder="Confirm Password*" class="border p-3 w-100 my-2"name="pwd02">
+                            <input type="text" placeholder="name*" class="border p-3 w-100 my-2"name="name01">
+                            <input type="text" placeholder="Nickname*" class="border p-3 w-100 my-2"name="n_name">
+                            <div>
+                            <input type="text" id="zonecode" name="addr01" class="border p-2 w-50 my-2" readonly style="float: left" >
                             <input type="button" class="btn btn-primary ml-4 mt-2 px-2 py-2 text-white border-0 rounded font-weight-bold"
                                    name="find_button" id="find_button" value="우편번호 찾기">
-                            <input type="text" id="address" name="address" class="border p-2 w-100 my-2" readonly>
-                            <input type="text" id="detail" name="detail" class="border p-2 w-100 my-2" placeholder="detail address*">
+                            </div>
+                            <input type="text" id="address" name="addr02" class="border p-2 w-100 mt-2 mb-2" readonly>
+                            <input type="text" id="detail" name="addr03" class="border p-2 w-100 my-2" placeholder="detail address*">
 
                             <div class="loggedin-forgot d-inline-flex my-3">
                                 <input type="checkbox" id="registering" class="mt-1">
                                 <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label>
                             </div>
-                            <button type="submit" class="d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold">Register Now</button>
+                            <div id="div_reCAPTCHAR"></div>
+                            <button type="submit" id="signUp" class="d-block mt-3 py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold">Register Now</button>
                         </fieldset>
                     </form>
                 </div>
@@ -161,6 +192,8 @@
         </div>
     </div>
 </section>
+<script>
+</script>
 <!--============================
 =            Footer            =
 =============================-->
@@ -280,6 +313,52 @@
 <script src="plugins/google-map/gmap.js"></script>
 <script src="js/script.js"></script>
 
+<!-- validation -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.js"></script>
+
+<script src="js/register.js"></script>
+<script type="text/javascript">
+    var onloadCallback = function() {
+        grecaptcha.render('div_reCAPTCHAR', {
+            'sitekey' : '6LfwkSMhAAAAANT8PFbDADKCahVMq38cTGL3rUs2'
+        });
+    };
+
+    function formSubmit(){
+        if (grecaptcha.getResponse() == "") {
+            alert("reCAPTCHA에 체크해주세요.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+<script>
+    $("#duplicate_check").click(function(){
+       $("#signUp").attr("type","button");
+        const id = $("#user_id").val();
+        $.ajax({
+            type: "get",
+            async: false,
+            url : "/register/idcheck",
+            data: {id: id},
+            success: function (data) {
+                if (data == 1) {
+                    $("#dupTestMsg").text("이미 사용중인 ID 입니다.");
+                    $("#dupTestMsg").addClass("dupTestMsgF");
+                    $("#dupTestMsg").removeClass("dupTestMsgT");
+                } else {
+                    $("#dupTestMsg").text("사용 가능한 ID 입니다.");
+                    $("#dupTestMsg").addClass("dupTestMsgT");
+                    $("#dupTestMsg").removeClass("dupTestMsgF");
+                    $("#signUp").attr("type", "submit");
+                }
+            }
+        })
+    });
+</script>
 </body>
 
 </html>
