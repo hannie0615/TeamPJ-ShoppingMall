@@ -1,141 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- SITE TITTLE -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index</title>
-
-    <!-- FAVICON -->
-    <link href="img/favicon.png" rel="shortcut icon">
-    <!-- PLUGINS CSS STYLE -->
-    <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
-    <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
-    <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
-<body class="body-wrapper">
+<body>
+<h2>This is index page</h2>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light navigation">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.png" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto main-nav ">
-                            <li class="nav-item active">
-                                <!-- 1. Home 버튼 index.html 경로로 설정 -->
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Info<span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">문의 게시판</a>
-                                    <a class="dropdown-item" href="#">About Us</a>
-
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    MyPage <span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">장바구니</a>
-                                    <a class="dropdown-item" href="#">관심목록</a>
-                                    <a class="dropdown-item" href="#">후기관리</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Order <span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 4. 'Order'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">주문 조회</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto mt-10">
-                            <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
-                            <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="javascript:void(0)" onclick="aTagPost('/addlist')">
-                                    <i class="fa fa-plus-circle"></i>Add Goods</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-<div style="position: absolute; top:200px; width: 100%">
-    <section class="page-search">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advance Search -->
-                    <div class="advance-search">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-8">
-                                    <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-                                </div>
-                                <div class="form-group col-md-1"></div>
-                                <div class="form-group col-md-2">
-                                    <!-- 6. 상품 DB에서 find 하기 -->
-                                    <button type="submit" class="btn btn-primary">Search Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-</body>
-
-<!-- 요 아래로 상품 뷰 쭉 보여주기 -->
-
-
-
+<a href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
+<a href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
+<a href="javascript:void(0)" onclick="aTagPost('/addlist')"> About Us</a>
 
 <script>
     let url;
