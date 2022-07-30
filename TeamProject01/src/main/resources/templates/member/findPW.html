@@ -6,25 +6,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>로그인</title>
+    <title>비밀번호 찾기</title>
 
     <!-- FAVICON -->
-    <link href="img/favicon.png" rel="shortcut icon">
+    <link href="../../static/images/favicon.png" rel="shortcut icon">
     <!-- PLUGINS CSS STYLE -->
     <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap-slider.css">
     <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../../static/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="../../static/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../../static/css/style.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,7 +33,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body class="body-wrapper">
@@ -56,15 +55,15 @@
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
                                 <!-- 1. Home 버튼 index.html 경로로 설정 -->
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="../../static/index.html">Home</a>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Info<span><i class="fa fa-angle-down"></i></span>
                                 </a>
                                 <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="contact-us.html">Contact Us</a>
-                                    <a class="dropdown-item" href="aboutUs.html">About Us</a>
+                                    <a class="dropdown-item" href="../../templates/inquiry/contact-us.html">Contact Us</a>
+                                    <a class="dropdown-item" href="../../templates/contact/aboutUs.html">About Us</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
@@ -73,8 +72,8 @@
                                 </a>
                                 <!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="delivery-search.html">배송조회</a>
-                                    <a class="dropdown-item" href="manageProduct.html">(관리자용)상품조회</a>
+                                    <a class="dropdown-item" href="../../templates/delivery/delivery-search.html">배송조회</a>
+                                    <a class="dropdown-item" href="../../templates/product/manageProduct.html">(관리자용)상품조회</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
@@ -83,11 +82,11 @@
                                 </a>
                                 <!-- 4. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="myOrder.html">주문내역</a>
-                                    <a class="dropdown-item" href="myLike.html">관심목록</a>
-                                    <a class="dropdown-item" href="myCart.html">장바구니</a>
-                                    <a class="dropdown-item" href="myInquiry.html">문의내역</a>
-                                    <a class="dropdown-item" href="myReview.html">리뷰내역</a>
+                                    <a class="dropdown-item" href="../../templates/myPage/myOrder.html">주문내역</a>
+                                    <a class="dropdown-item" href="../../templates/myPage/myLike.html">관심목록</a>
+                                    <a class="dropdown-item" href="../../templates/myPage/myCart.html">장바구니</a>
+                                    <a class="dropdown-item" href="../../templates/myPage/myInquiry.html">문의내역</a>
+                                    <a class="dropdown-item" href="../../templates/myPage/myReview.html">리뷰내역</a>
                                 </div>
                             </li>
                         </ul>
@@ -111,25 +110,24 @@
     </div>
 </section>
 <!--================================
-=             로그인 입력            =
+=            비밀번호 찾기            =
 =================================-->
 <section class="login py-5 border-top-1">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
+                    <h3 class="bg-gray p-4">비밀번호 찾기</h3>
                     <form action="#">
                         <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                <input type="checkbox" id="keep-me-logged-in">
-                                <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
-                            </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
+                            <input type="text" placeholder="이름" class="border p-3 w-100 my-2">
+                            <input type="text" placeholder="생년월일" class="border p-3 w-100 my-2">
+                            <input type="text" placeholder="이메일" class="border p-3 w-100 my-2">
+                            <input type="text" placeholder="아이디" class="border p-3 w-100 my-2">
+                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">비밀번호 찾기</button>
+
+                            <a class="mt-3 d-block  text-primary" href="#">ID를 잊어버리셨습니까?</a>
+                            <a class="mt-3 d-inline-block text-primary" href="register.html">회원가입하기</a>
                         </fieldset>
                     </form>
                 </div>

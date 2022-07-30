@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Classimax</title>
+    <title>회원가입</title>
 
     <!-- FAVICON -->
     <link href="img/favicon.png" rel="shortcut icon">
@@ -77,8 +77,9 @@
 </head>
 
 <body class="body-wrapper">
-
-
+<!--================================
+=              Header              =
+=================================-->
 <section>
     <div class="container">
         <div class="row">
@@ -94,56 +95,53 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
+                                <!-- 1. Home 버튼 index.html 경로로 설정 -->
                                 <a class="nav-link" href="index.html">Home</a>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Dashboard<span><i class="fa fa-angle-down"></i></span>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Info<span><i class="fa fa-angle-down"></i></span>
                                 </a>
-
-                                <!-- Dropdown list -->
+                                <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                                    <a class="dropdown-item" href="dashboard-my-ads.html">Dashboard My Ads</a>
-                                    <a class="dropdown-item" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a>
-                                    <a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
-                                    <a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
+                                    <a class="dropdown-item" href="contact-us.html">Contact Us</a>
+                                    <a class="dropdown-item" href="aboutUs.html">About Us</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pages <span><i class="fa fa-angle-down"></i></span>
+                                    Look-Up <span><i class="fa fa-angle-down"></i></span>
                                 </a>
-                                <!-- Dropdown list -->
+                                <!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about-us.html">About Us</a>
-                                    <a class="dropdown-item" href="contact-us.html">Contact Us</a>
-                                    <a class="dropdown-item" href="user-profile.html">User Profile</a>
-                                    <a class="dropdown-item" href="404.html">404 Page</a>
-                                    <a class="dropdown-item" href="package.html">Package</a>
-                                    <a class="dropdown-item" href="single.html">Single Page</a>
-                                    <a class="dropdown-item" href="store.html">Store Single</a>
-                                    <a class="dropdown-item" href="single-blog.html">Single Post</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
-
+                                    <a class="dropdown-item" href="delivery-search.html">배송조회</a>
+                                    <a class="dropdown-item" href="manageProduct.html">(관리자용)상품조회</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
                                 <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Listing <span><i class="fa fa-angle-down"></i></span>
+                                    MyPage <span><i class="fa fa-angle-down"></i></span>
                                 </a>
-                                <!-- Dropdown list -->
+                                <!-- 4. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="category.html">Ad-Gird View</a>
-                                    <a class="dropdown-item" href="ad-listing-list.html">Ad-List View</a>
+                                    <a class="dropdown-item" href="myOrder.html">주문내역</a>
+                                    <a class="dropdown-item" href="myLike.html">관심목록</a>
+                                    <a class="dropdown-item" href="myCart.html">장바구니</a>
+                                    <a class="dropdown-item" href="myInquiry.html">문의내역</a>
+                                    <a class="dropdown-item" href="myReview.html">리뷰내역</a>
                                 </div>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto mt-10">
+                            <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="login.html">Login</a>
+                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
+                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white add-button" href="javascript:void(0)" onclick="aTagPost('/addlist')">
+                                    <i class="fa fa-plus-circle"></i>Add Goods</a>
                             </li>
                         </ul>
                     </div>
@@ -152,7 +150,9 @@
         </div>
     </div>
 </section>
-
+<!--================================
+=             Register              =
+=================================-->
 <section class="login py-5 border-top-1">
     <div class="container">
         <div class="row justify-content-center">
@@ -208,38 +208,24 @@
                     <!-- footer logo -->
                     <img src="images/logo-footer.png" alt="">
                     <!-- description -->
-                    <p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="alt-color">스터디용으로 쇼핑몰 웹사이트를 개발합니다!</p>
                 </div>
             </div>
             <!-- Link list -->
             <div class="col-lg-2 offset-lg-1 col-md-3">
                 <div class="block">
-                    <h4>Site Pages</h4>
+                    <h4>사이트 정보</h4>
                     <ul>
-                        <li><a href="#">Boston</a></li>
-                        <li><a href="#">How It works</a></li>
-                        <li><a href="#">Deals & Coupons</a></li>
-                        <li><a href="#">Articls & Tips</a></li>
-                        <li><a href="terms-condition.html">Terms & Conditions</a></li>
+                        <li><a href="#">About-Us</a></li>
                     </ul>
                 </div>
             </div>
             <!-- Link list -->
             <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
                 <div class="block">
-                    <h4>Admin Pages</h4>
+                    <h4>문의하기</h4>
                     <ul>
-                        <li><a href="category.html">Category</a></li>
-                        <li><a href="single.html">Single Page</a></li>
-                        <li><a href="store.html">Store Single</a></li>
-                        <li><a href="single-blog.html">Single Post</a>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li>
-
-
-
+                        <li><a href="#">Contact-Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -250,9 +236,14 @@
                     <div class="mobile d-flex">
                         <a href="">
                             <!-- Icon -->
-                            <img src="images/footer/phone-icon.png" alt="mobile-icon">
+                            <img src="../../static/images/footer/phone-icon.png" alt="mobile-icon">
                         </a>
-                        <p>Get the Dealsy Mobile App and Save more</p>
+                        <p>참여자의 GitHub</p>
+                        <p>
+                            @dwc0213<br>
+                            @Dab1n-Lee<br>
+                            @hannie0615<br>
+                        </p>
                     </div>
                     <div class="download-btn d-flex my-3">
                         <a href="#"><img src="images/apps/google-play-store.png" class="img-fluid" alt=""></a>
@@ -295,6 +286,7 @@
         <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
     </div>
 </footer>
+
 
 <!-- JAVASCRIPTS -->
 <script src="plugins/jQuery/jquery.min.js"></script>
