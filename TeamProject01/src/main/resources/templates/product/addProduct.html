@@ -6,25 +6,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>로그인</title>
+    <title>상품 추가</title>
 
     <!-- FAVICON -->
-    <link href="img/favicon.png" rel="shortcut icon">
+    <link href="../../static/img/favicon.png" rel="shortcut icon">
     <!-- PLUGINS CSS STYLE -->
     <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap-slider.css">
     <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="../../static/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../../static/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="../../static/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../../static/css/style.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -110,34 +110,72 @@
         </div>
     </div>
 </section>
-<!--================================
-=             로그인 입력            =
-=================================-->
-<section class="login py-5 border-top-1">
+
+<section class="ad-post bg-gray py-5">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
-                <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
-                    <form action="#">
-                        <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                <input type="checkbox" id="keep-me-logged-in">
-                                <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
+        <form action="#">
+            <!-- Post Your ad start -->
+            <fieldset class="border border-gary p-4 mb-5">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>Post Your ad</h3>
+                        </div>
+                        <div class="col-lg-6">
+                            <h6 class="font-weight-bold pt-4 pb-1">상품명:</h6>
+                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품명을 입력하시오">
+                            <h6 class="font-weight-bold pt-4 pb-1">상품 종류:</h6>
+                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 종류를 입력하시오">
+                            <h6 class="font-weight-bold pt-4 pb-1">상품 업체:</h6>
+                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 업체를 입력하시오">
+                            <h6 class="font-weight-bold pt-4 pb-1">상품 내용:</h6>
+                            <textarea name="" id="" class="border p-3 w-100" rows="7" placeholder="상품에 대해 설명해주세요"></textarea>
+                        </div>
+                        <div class="col-lg-6">
+                            <h6 class="font-weight-bold pt-4 pb-1">상품 수량:</h6>
+                            <select name="" id="inputGroupSelect" class="w-100">
+                                <option value="1">1개</option>
+                                <option value="2">2개</option>
+                                <option value="3">3개</option>
+                                <option value="4">4개</option>
+                                <option value="5">5개</option>
+                                <option value="6">6개</option>
+                                <option value="7">7개</option>
+                                <option value="8">8개</option>
+                            </select>
+                            <div class="price">
+                                <h6 class="font-weight-bold pt-4 pb-1">가격:</h6>
+                                <div class="row px-3">
+                                    <div class="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                                        <input type="text" name="price" class="border-0 py-2 w-100 price" placeholder="Price"
+                                            id="가격">
+                                    </div>
+                                </div>
                             </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
-                        </fieldset>
-                    </form>
-                </div>
+                            <div class="choose-file text-center my-4 py-4 rounded">
+                                <label for="file-upload">
+                                    <span class="d-block font-weight-bold text-dark">이미지 파일을 업로드하세요</span>
+                                    <span class="d-block">or</span>
+                                    <span class="d-block btn bg-primary text-white my-3 select-files">파일 선택</span>
+                                    <span class="d-block">최대 파일 업로드 사이즈: 500 KB</span>
+                                    <input type="file" class="form-control-file d-none" id="file-upload" name="file">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+            </fieldset>
+            <!-- Post Your ad end -->
+
+            <!-- submit button -->
+            <div class="checkbox d-inline-flex">
+                <input type="checkbox" id="terms-&-condition" class="mt-1">
+                <label for="terms-&-condition" class="ml-2">
+                    <span> <a class="text-success" href="terms-condition.html">게시 규칙에 동의해주십시오.</a></span>
+                </label>
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary d-block mt-2">상품 등록하기</button>
+        </form>
     </div>
 </section>
-
 <!--============================
 =            Footer            =
 =============================-->

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>문의 등록</title>
+    <title>마이페이지</title>
 
     <!-- FAVICON -->
     <link href="../../static/img/favicon.png" rel="shortcut icon">
@@ -110,76 +110,233 @@
         </div>
     </div>
 </section>
+<!--==================================
+=            User Profile            =
+===================================-->
+<section class="dashboard section">
+  <!-- Container Start -->
+  <div class="container">
+    <!-- Row Start -->
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+        <div class="sidebar">
+          <!-- User Widget -->
+          <div class="widget user-dashboard-profile">
+            <!-- User Image -->
+            <div class="profile-thumb">
+              <img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+            </div>
+            <!-- User Name -->
+            <h5 class="text-center">이용자1</h5>
+            <p>타임스탬프</p>
+            <a href="../member/edit-profile.html" class="btn btn-main-sm">프로필 수정하기</a>
+          </div>
+          <!-- Dashboard Links -->
+          <div class="widget user-dashboard-menu">
+            <ul>
+              <li><a href="myOrder.html"><i class="fa fa-user"></i>주문내역</a></li>
+              <li class="active"><a href="myLike.html"><i class="fa fa-bookmark-o"></i>관심목록<span>8</span></a></li>
+              <li><a href="myCart.html"><i class="fa fa-file-archive-o"></i>장바구니<span>5</span></a></li>
+              <li><a href="myInquiry.html"><i class="fa fa-file-archive-o"></i>문의내역</a></li>
+              <li><a href="myReview.html"><i class="fa fa-bolt"></i>리뷰내역</a></li>
+              <li><a href="#"><i class="fa fa-cog"></i> Logout</a></li>
+              <li><a href="" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete
+                  Account</a></li>
+            </ul>
+          </div>
 
-<!-- page title -->
-<!--================================
-=            Page Title            =
-=================================-->
-<section class="page-title">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 text-center">
-				<!-- Title text -->
-				<h3>Contact Us</h3>
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-</section>
-<!-- page title -->
-
-<!--================================
-=            문의 입력              =
-=================================-->
-<section class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="contact-us-content p-4">
-                    <h5>Contact Us</h5>
-                    <h1 class="pt-3">문의할 사항이 있으십니까?</h1>
-                    <p class="pt-3 pb-5">이곳에 문의 사항을 남겨주십시오.</p>
+          <!-- delete-account modal -->
+          <!-- delete account popup modal start-->
+                <!-- Modal -->
+                <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header border-bottom-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <img src="images/account/Account1.png" class="img-fluid mb-2" alt="">
+                        <h6 class="py-2">Are you sure you want to delete your account?</h6>
+                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                        <textarea name="message" id="" cols="40" rows="4" class="w-100 rounded"></textarea>
+                      </div>
+                      <div class="modal-footer border-top-0 mb-3 mx-5 justify-content-lg-between justify-content-center">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                    <form action="#">
-                        <fieldset class="p-4">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-6 py-2">
-                                        <input type="text" placeholder="제목 *" class="form-control" required>
-                                    </div>
-                                    <div class="col-lg-6 pt-2">
-                                        <input type="text" placeholder="작성자 *" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 py-1">
-                                    <input type="checkbox" id="registering" class="mt-1">
-                                    <label class="px-2">비밀여부</label>
-                                </div>
-                                <div class="col-lg-6 pt-2">
-                                    <input type="text" placeholder="비밀번호 *" class="form-control" required>
-                                </div>
+                <!-- delete account popup modal end-->
+          <!-- delete-account modal -->
 
-                            </div>
-                            <select name="" id="" class="form-control w-100">
-                                <option value="1">문의 카테고리</option>
-                                <option value="1">상품 불량</option>
-                                <option value="1">배송 문제</option>
-                                <option value="1">기타</option>
-                            </select>
-                            <textarea name="message" id="#"  placeholder="Message *" class="border w-100 p-3 mt-3 mt-lg-4"></textarea>
-                            <div class="btn-grounp">
-                                <button type="submit" class="btn btn-primary mt-2 float-right">SUBMIT</button>
-                            </div>
-                        </fieldset>
-                    </form>
-            </div>
         </div>
+      </div>
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+        <!-- Recently Favorited -->
+        <div class="widget dashboard-container my-adslist">
+          <h3 class="widget-header">관심목록</h3>
+          <table class="table table-responsive product-dashboard-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product Title</th>
+                <th class="text-center">Category</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../../static/images/Img.png" alt="image description"></td>
+                <td class="product-details">
+                  <h3 class="title">상품명1</h3>
+                  <span class="add-id"><strong>Prod.ID:</strong>상품 ID</span>
+                  <span><strong>Time </strong><time>6/27, 2017</time> </span>
+                </td>
+                <td class="product-category"><span class="categories">상품 종류1</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../../static/images/Img.png" alt="image description"></td>
+                <td class="product-details">
+                  <h3 class="title">상품명2</h3>
+                    <span class="add-id"><strong>Prod.ID:</strong>상품 ID</span>
+                    <span><strong>Time </strong><time>6/27, 2017</time> </span>
+                </td>
+                <td class="product-category"><span class="categories">상품 종류2</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../../static/images/Img.png" alt="image description"></td>
+                <td class="product-details">
+                  <h3 class="title">상품명3</h3>
+                    <span class="add-id"><strong>Prod.ID:</strong>상품 ID</span>
+                    <span><strong>Time </strong><time>6/27, 2017</time> </span>
+                </td>
+                <td class="product-category"><span class="categories">상품 종류3</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../../static/images/Img.png" alt="image description"></td>
+                <td class="product-details">
+                  <h3 class="title">상품명4</h3>
+                    <span class="add-id"><strong>Prod.ID:</strong>상품 ID</span>
+                    <span><strong>Time </strong><time>6/27, 2017</time> </span>
+                </td>
+                <td class="product-category"><span class="categories">상품 종류4</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../../static/images/Img.png" alt="image description"></td>
+                <td class="product-details">
+                  <h3 class="title">상품명5</h3>
+                    <span class="add-id"><strong>Prod.ID:</strong>상품 ID</span>
+                    <span><strong>Time </strong><time>6/27, 2017</time> </span>
+                </td>
+                <td class="product-category"><span class="categories">상품 종류5</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- pagination -->
+        <div class="pagination justify-content-center">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item active"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+        <!-- pagination -->
+
+      </div>
     </div>
+    <!-- Row End -->
+  </div>
+  <!-- Container End -->
 </section>
-<!-- contact us end -->
 <!--============================
 =            Footer            =
 =============================-->
@@ -272,6 +429,7 @@
         <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
     </div>
 </footer>
+
 
 <!-- JAVASCRIPTS -->
 <script src="plugins/jQuery/jquery.min.js"></script>
