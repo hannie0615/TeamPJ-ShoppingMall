@@ -9,6 +9,9 @@ public interface MemberRepositoryInterface {
 
     Member saveMember(Member m);
     int idDuplicateCheck(String id);
+    int nicknameDuplicateCheck(String nickname);
+    int mailDuplicateCheck(String mail);
     List<Member> findAll();
+
 
 }

@@ -28,4 +28,12 @@ public class MemberService {
     public List<Member> findAllMember() {
         return repository.findAll();
     }
+
+    public int nicknameCheck(String id) {
+        return repository.nicknameDuplicateCheck(id);
+    }
+
+    public int emailCheck(String mail) {
+        return repository.mailDuplicateCheck(mail);
+    }
 }

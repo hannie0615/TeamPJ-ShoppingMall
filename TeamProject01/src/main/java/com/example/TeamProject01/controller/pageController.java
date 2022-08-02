@@ -31,9 +31,21 @@ public class pageController {
     @ResponseBody
     @GetMapping("/register/idcheck")
     public int idchecked(@RequestParam("id") String id){
-
         int data = service.idCheck(id);
+        return data;
+    }
 
+    @ResponseBody
+    @GetMapping("/register/nicknameCheck")
+    public int nicknameCheck(@RequestParam("nickname") String n_name) {
+        int data = service.nicknameCheck(n_name);
+        return data;
+    }
+
+    @ResponseBody
+    @GetMapping("/register/mailCheck")
+    public int emailCheck(@RequestParam("mail") String email) {
+        int data = service.emailCheck(email);
         return data;
     }
 
