@@ -61,6 +61,28 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     }
 
     @Override
+    public int nicknameDuplicateCheck(String nickname) {
+        int data = 1;
+
+        List<Member> result = jdbcTemplate.query("SELECT * FROM shoppingmall.member WHERE n_name = ?", memberRowMapper(), nickname);
+        if (result.isEmpty()) {
+            data = 0;
+        }
+        return data;
+    }
+
+    @Override
+    public int mailDuplicateCheck(String mail) {
+        int data = 1;
+
+        List<Member> result = jdbcTemplate.query("SELECT * FROM shoppingmall.member WHERE email01 = ?", memberRowMapper(), mail);
+        if (result.isEmpty()) {
+            data = 0;
+        }
+        return data;
+    }
+
+    @Override
     public List<Member> findAll() {
         return jdbcTemplate.query("SELECT * FROM shoppingmall.member", memberRowMapper());
     }
