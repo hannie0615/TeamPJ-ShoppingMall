@@ -4,6 +4,7 @@ import com.example.TeamProject01.Domain.Member;
 import com.example.TeamProject01.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,8 +58,62 @@ public class pageController {
         return "insertTest";
     }
 
-    @PostMapping("/members/new") //슬러쉬를 붙이지 않으면 이전의 URL 뒤에 이어서 URL 이 나옴, 그리고 슬러쉬를 붙이면
-    //Localhost: XXXX 뒤에 이어서 나옴
+    //contact-us
+    @GetMapping("contactus")
+    public String gocontact(Model model) {
+        return "inquiry/contact-us";
+    }
+
+    // aboutUs
+    @GetMapping("aboutus")
+    public String goabout(Model model) {
+        return "contact/aboutUs";
+    }
+
+    // 배송조회
+    @GetMapping("delivsch")
+    public String godelivsch(Model model) {
+        return "delivery/delivery-search";
+    }
+
+    // 관리자용 상품조회
+    @GetMapping("product")
+    public String goproduct(Model model) {
+        return "product/manageProduct";
+    }
+
+    // 주문내역
+    @GetMapping("order")
+    public String goorder(Model model) {
+        return "myPage/myOrder";
+    }
+
+    // 관심목록
+    @GetMapping("like")
+    public String golike(Model model) {
+        return "myPage/myLike";
+    }
+
+    // 문의내역
+    @GetMapping("inquiry")
+    public String goinquiry(Model model) {
+        return "myPage/myInquiry";
+    }
+
+    // 장바구니
+    @GetMapping("cart")
+    public String gocart(Model model) {
+        return "myPage/myCart";
+    }
+
+    // 리뷰내역
+    @GetMapping("review")
+    public String goreview(Model model) {
+        return "myPage/myReview";
+    }
+
+    @PostMapping("/members/new") // 슬러쉬를 붙이지 않으면 이전의 URL 뒤에 이어서 URL 이 나옴, 그리고 슬러쉬를 붙이면
+    // Localhost: XXXX 뒤에 이어서 나옴
     public String create(@Valid MemberForm mf) throws ParseException {
         // 우리는 사용자가 입력한 name 값을 가지고 객체를 만듦
         Date date = new Date();
