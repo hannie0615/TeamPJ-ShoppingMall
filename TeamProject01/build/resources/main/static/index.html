@@ -60,29 +60,31 @@
                                 </a>
                                 <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">문의 게시판</a>
-                                    <a class="dropdown-item" href="#">About Us</a>
-
+                                    <a class="dropdown-item" href="/contactus">Contact Us</a>
+                                    <a class="dropdown-item" href="/aboutus">About Us</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    MyPage <span><i class="fa fa-angle-down"></i></span>
+                                    Look-Up <span><i class="fa fa-angle-down"></i></span>
                                 </a>
                                 <!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">장바구니</a>
-                                    <a class="dropdown-item" href="#">관심목록</a>
-                                    <a class="dropdown-item" href="#">후기관리</a>
+                                    <a class="dropdown-item" href="/delivsch">배송조회</a>
+                                    <a class="dropdown-item" href="/product">(관리자용)상품조회</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown dropdown-slide">
                                 <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Order <span><i class="fa fa-angle-down"></i></span>
+                                    MyPage <span><i class="fa fa-angle-down"></i></span>
                                 </a>
-                                <!-- 4. 'Order'의 Dropdown 페이지 경로 설정해주기 -->
+                                <!-- 4. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">주문 조회</a>
+                                    <a class="dropdown-item" href="/order">주문내역</a>
+                                    <a class="dropdown-item" href="/like">관심목록</a>
+                                    <a class="dropdown-item" href="/cart">장바구니</a>
+                                    <a class="dropdown-item" href="/inquiry">문의내역</a>
+                                    <a class="dropdown-item" href="/review">리뷰내역</a>
                                 </div>
                             </li>
                         </ul>
@@ -105,9 +107,10 @@
         </div>
     </div>
 </section>
-<div style="position: absolute; top:200px; width: 100%">
+<div  style="position: absolute; top:200px; width: 100%">
+<div class="container">
     <section class="page-search">
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advance Search -->
@@ -115,12 +118,12 @@
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-md-8">
-                                    <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
+                                    <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="검색명을 입력하십시오">
                                 </div>
                                 <div class="form-group col-md-1"></div>
                                 <div class="form-group col-md-2">
                                     <!-- 6. 상품 DB에서 find 하기 -->
-                                    <button type="submit" class="btn btn-primary">Search Now</button>
+                                    <button type="submit" class="btn btn-primary">검색</button>
                                 </div>
                             </div>
                         </form>
@@ -130,13 +133,356 @@
         </div>
     </section>
 </div>
-</body>
+</div>
+
 
 <!-- 요 아래로 상품 뷰 쭉 보여주기 -->
 
+<div style="position: absolute; top:300px; width: 100%">
+<section class="section">
+    <div class="container">
+    <div class="product-grid-list">
+        <div class="row mt-30">
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명1</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류1</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명</p>
+                            <div class="product-ratings">
+                                <!--별점-->
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명2</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류2</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명2</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명3</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류3</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명3</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명4</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류4</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명4</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명5</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류5</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명5</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명6</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류6</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명6</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명7</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류7</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명7</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명8</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류8</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명8</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="product/singleProduct.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="product/singleProduct.html">상품명9</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="product/singleProduct.html"><i class="fa fa-folder-open-o"></i>상품 종류9</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#"><i class="fa fa-calendar"></i>타임스탬프</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">상품 설명9</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+</div>
+</body>
 <script>
     let url;
     function aTagPost(url){
@@ -147,5 +493,5 @@
         f.submit();
     }
 </script>
-</body>
+
 </html>
