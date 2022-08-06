@@ -41,8 +41,6 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
         parameters.put("r_date01", m.getR_date01());
         parameters.put("p_time", m.getP_time());
 
-
-
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
         m.setUid(key.intValue());
         return m;
@@ -52,9 +50,15 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     public int idDuplicateCheck(String id) {
         int data = 1;
 
-        List<Member> result = jdbcTemplate.query("SELECT * FROM shoppingmall.member WHERE id01 = ?", memberRowMapper(),id);
+        String result = jdbcTemplate.query("SELECT id01 FROM shoppingmall.member WHERE id01 = ?", rs -> {
+            String id01 = null;
+            if (rs.next()) {
+                id01 = rs.getString("id01");
+            }
+            return id01;
+        }, id);
 
-        if (result.isEmpty()) {
+        if (result == null) {
             data = 0;
         }
         return data;
@@ -64,8 +68,14 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     public int nicknameDuplicateCheck(String nickname) {
         int data = 1;
 
-        List<Member> result = jdbcTemplate.query("SELECT * FROM shoppingmall.member WHERE n_name = ?", memberRowMapper(), nickname);
-        if (result.isEmpty()) {
+        String result = jdbcTemplate.query("SELECT n_name FROM shoppingmall.member WHERE n_name = ?", rs -> {
+            String n_name = null;
+            if (rs.next()) {
+                n_name = rs.getString("n_name");
+            }
+            return n_name;
+        }, nickname);
+        if (result == null) {
             data = 0;
         }
         return data;
@@ -75,8 +85,14 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     public int mailDuplicateCheck(String mail) {
         int data = 1;
 
-        List<Member> result = jdbcTemplate.query("SELECT * FROM shoppingmall.member WHERE email01 = ?", memberRowMapper(), mail);
-        if (result.isEmpty()) {
+        String result = jdbcTemplate.query("SELECT email01 FROM shoppingmall.member WHERE email01 = ?", rs -> {
+            String email = null;
+            if (rs.next()) {
+                email = rs.getString("email01");
+            }
+            return email;
+        }, mail);
+        if (result == null) {
             data = 0;
         }
         return data;
