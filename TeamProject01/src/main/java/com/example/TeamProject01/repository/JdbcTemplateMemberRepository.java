@@ -115,7 +115,7 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
             member.setAddr02(rs.getString("addr02"));
             member.setAddr03(rs.getString("addr03"));
             member.setR_date01(rs.getDate("r_date01"));
-            member.setP_time(rs.getTimestamp("p_time"));
+            member.setP_time(rs.getLong("p_time"));
             return member;
         };
     }

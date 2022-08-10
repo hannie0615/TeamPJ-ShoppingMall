@@ -45,7 +45,7 @@ public class Member {
 
 
     private Date r_date01;
-    private Timestamp p_time;
+    private long p_time;
 
 
 }
