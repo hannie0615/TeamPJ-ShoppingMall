@@ -131,6 +131,7 @@ public class pageController {
         Date date = new Date();
         long timeInMilliSeconds = date.getTime();
         java.sql.Date date1 = new java.sql.Date(timeInMilliSeconds);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         Member m = new Member();
         m.setEmail01(mf.getEmail01());
@@ -142,7 +143,7 @@ public class pageController {
         m.setAddr02(mf.getAddr02());
         m.setAddr03(mf.getAddr03());
         m.setR_date01(date1);
-        m.setP_time(Timestamp.valueOf(LocalDateTime.now()));
+        m.setP_time(timestamp.getTime());
 
         // DB에 넣어야 함.
 
