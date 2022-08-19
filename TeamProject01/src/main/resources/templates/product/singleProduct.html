@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 	<!-- SITE TITTLE -->
@@ -40,76 +40,12 @@
 <!--================================
 =              Header              =
 =================================-->
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item active">
-								<!-- 1. Home 버튼 index.html 경로로 설정 -->
-								<a class="nav-link" href="index.html">Home</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Info<span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="contact-us.html">Contact Us</a>
-									<a class="dropdown-item" href="aboutUs.html">About Us</a>
-								</div>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Look-Up <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="delivery-search.html">배송조회</a>
-									<a class="dropdown-item" href="manageProduct.html">(관리자용)상품조회</a>
-								</div>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									MyPage <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- 4. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="myOrder.html">주문내역</a>
-									<a class="dropdown-item" href="myLike.html">관심목록</a>
-									<a class="dropdown-item" href="myCart.html">장바구니</a>
-									<a class="dropdown-item" href="myInquiry.html">문의내역</a>
-									<a class="dropdown-item" href="myReview.html">리뷰내역</a>
-								</div>
-							</li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
-							<li class="nav-item">
-								<a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="javascript:void(0)" onclick="aTagPost('/addlist')">
-									<i class="fa fa-plus-circle"></i>Add Goods</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
+
+<section th:replace="thymeleafFragment/common :: NavigationBar"></section>
+
+<!--================================
+=                                  =
+=================================-->
 <section class="page-search">
 	<div class="container">
 		<div class="row">
@@ -384,98 +320,15 @@
 	</div>
 	<!-- Container End -->
 </section>
+
 <!--============================
 =            Footer            =
 =============================-->
 
-<footer class="footer section section-sm">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
-				<!-- About -->
-				<div class="block about">
-					<!-- footer logo -->
-					<img src="images/logo-footer.png" alt="">
-					<!-- description -->
-					<p class="alt-color">스터디용으로 쇼핑몰 웹사이트를 개발합니다!</p>
-				</div>
-			</div>
-			<!-- Link list -->
-			<div class="col-lg-2 offset-lg-1 col-md-3">
-				<div class="block">
-					<h4>사이트 정보</h4>
-					<ul>
-						<li><a href="#">About-Us</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- Link list -->
-			<div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
-				<div class="block">
-					<h4>문의하기</h4>
-					<ul>
-						<li><a href="#">Contact-Us</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- Promotion -->
-			<div class="col-lg-4 col-md-7">
-				<!-- App promotion -->
-				<div class="block-2 app-promotion">
-					<div class="mobile d-flex">
-						<a href="">
-							<!-- Icon -->
-							<img src="../../static/images/footer/phone-icon.png" alt="mobile-icon">
-						</a>
-						<p>참여자의 GitHub</p>
-						<p>
-							@dwc0213<br>
-							@Dab1n-Lee<br>
-							@hannie0615<br>
-						</p>
-					</div>
-					<div class="download-btn d-flex my-3">
-						<a href="#"><img src="images/apps/google-play-store.png" class="img-fluid" alt=""></a>
-						<a href="#" class=" ml-3"><img src="images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-</footer>
+<footer class="footer section section-sm" th:replace="thymeleafFragment/common :: ft"></footer>
+
 <!-- Footer Bottom -->
-<footer class="footer-bottom">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-12">
-				<!-- Copyright -->
-				<div class="copyright">
-					<p>Copyright © <script>
-						var CurrentYear = new Date().getFullYear()
-						document.write(CurrentYear)
-					</script>. All Rights Reserved, theme by <a class="text-primary" href="https://themefisher.com" target="_blank">themefisher.com</a></p>
-				</div>
-			</div>
-			<div class="col-sm-6 col-12">
-				<!-- Social Icons -->
-				<ul class="social-media-icons text-right">
-					<li><a class="fa fa-facebook" href="https://www.facebook.com/themefisher" target="_blank"></a></li>
-					<li><a class="fa fa-twitter" href="https://www.twitter.com/themefisher" target="_blank"></a></li>
-					<li><a class="fa fa-pinterest-p" href="https://www.pinterest.com/themefisher" target="_blank"></a></li>
-					<li><a class="fa fa-vimeo" href=""></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-	<!-- To Top -->
-	<div class="top-to">
-		<a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
-	</div>
-</footer>
+<footer class="footer-bottom" th:replace="thymeleafFragment/common :: ftbot"></footer>
 
 
 <!-- JAVASCRIPTS -->
@@ -496,5 +349,5 @@
 <script src="js/script.js"></script>
 
 </body>
-
+<script src="js/aTagPostJs.js"></script>
 </html>

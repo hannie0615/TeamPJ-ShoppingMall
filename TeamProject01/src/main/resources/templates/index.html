@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="thymeleafFragment/common :: head('Shoppingmall Main')">
 
     <!-- SITE TITTLE -->
     <meta charset="utf-8">
@@ -37,77 +37,9 @@
 </head>
 <body class="body-wrapper">
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light navigation">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.png" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto main-nav ">
-                            <li class="nav-item active">
-                                <!-- 1. Home 버튼 index.html 경로로 설정 -->
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Info<span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/contactus">Contact Us</a>
-                                    <a class="dropdown-item" href="/aboutus">About Us</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Look-Up <span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 3. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/delivsch">배송조회</a>
-                                    <a class="dropdown-item" href="/product">(관리자용)상품조회</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown dropdown-slide">
-                                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    MyPage <span><i class="fa fa-angle-down"></i></span>
-                                </a>
-                                <!-- 4. 'MyPage'의 Dropdown 페이지 경로 설정해주기 -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/order">주문내역</a>
-                                    <a class="dropdown-item" href="/like">관심목록</a>
-                                    <a class="dropdown-item" href="/cart">장바구니</a>
-                                    <a class="dropdown-item" href="/inquiry">문의내역</a>
-                                    <a class="dropdown-item" href="/review">리뷰내역</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto mt-10">
-                            <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
-                            <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/login')"> 로그인</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)" onclick="aTagPost('/register')">회원가입</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="javascript:void(0)" onclick="aTagPost('/addlist')">
-                                    <i class="fa fa-plus-circle"></i>Add Goods</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-<div  style="position: absolute; top:200px; width: 100%">
+<section th:replace="thymeleafFragment/common :: NavigationBar"></section>
+
+<div style="top:200px; width: 100%; padding-top: 70px">
 <div class="container">
     <section class="page-search">
         <div class="container" >
@@ -138,7 +70,7 @@
 
 <!-- 요 아래로 상품 뷰 쭉 보여주기 -->
 
-<div style="position: absolute; top:300px; width: 100%">
+<div style="top:300px; width: 100%">
 <section class="section">
     <div class="container">
     <div class="product-grid-list">
@@ -482,16 +414,17 @@
     </div>
 </section>
 </div>
+
+<!--============================
+=            Footer            =
+=============================-->
+
+<footer class="footer section section-sm" th:replace="thymeleafFragment/common :: ft"></footer>
+
+<!-- Footer Bottom -->
+<footer class="footer-bottom" th:replace="thymeleafFragment/common :: ftbot"></footer>
+
 </body>
-<script>
-    let url;
-    function aTagPost(url){
-        let f = document.createElement('form');
-        f.setAttribute('method', 'post');
-        f.setAttribute('action', url);
-        document.body.appendChild(f);
-        f.submit();
-    }
-</script>
+<script src="js/aTagPostJs.js"></script>
 
 </html>
