@@ -26,7 +26,6 @@
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
 
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,7 +63,7 @@
                                 </a>
                                 <!-- 2. 'Info'의 Dropdown 페이지 경로 설정해주기 -->
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/contactus">Contact Us</a>
+                                    <a class="dropdown-item" href="/contactus">문의하기</a>
                                     <a class="dropdown-item" href="/aboutus">About Us</a>
                                 </div>
                             </li>
@@ -95,16 +94,13 @@
                         <ul class="navbar-nav ml-auto mt-10">
                             <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)"
-                                   th:onclick="|aTagPost('/login')|"> 로그인</a>
+                                <a class="nav-link login-button" href="/login">로그인</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="javascript:void(0)"
-                                   th:onclick="|aTagPost('/register')|">회원가입</a>
+                                <a class="nav-link login-button" href="/register">회원가입</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="javascript:void(0)"
-                                   th:onclick="|aTagPost('/addlist')|">
+                                <a class="nav-link text-white add-button" href="/addlist">
                                     <i class="fa fa-plus-circle"></i>Add Goods</a>
                             </li>
                         </ul>
