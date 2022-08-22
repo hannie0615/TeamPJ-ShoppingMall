@@ -23,23 +23,18 @@ public class ProductController {
         this.service = service;
     }
 
-    @PostMapping("/addlist")
-    public String goAddProduct(){
-        return "product/addProduct";
-    }
 
-    @PostMapping("/product/new")
-    public String create(@Valid ProductForm pf) throws ParseException {
+    @PostMapping("/newproduct")
+    public String createProduct(@Valid ProductForm pf) throws ParseException {
 
         Product p = new Product();
+
         p.setPrd_name(pf.getPrd_name());
         p.setPrd_price(pf.getPrd_price());
         p.setPrd_cmp(pf.getPrd_cmp());
         p.setPrd_type(pf.getPrd_type());
-        p.setPrd_img(pf.getPrd_img());
-        p.setRealfile(pf.getRealfile());
         p.setPrd_ment(pf.getPrd_ment());
-        p.setPrd_stock(pf.getPrd_stock());
+        p.setPrd_sales(pf.getPrd_sales());
 
         // DB에 넣기
 

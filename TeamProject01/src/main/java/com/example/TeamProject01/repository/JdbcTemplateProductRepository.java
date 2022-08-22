@@ -29,10 +29,8 @@ public class JdbcTemplateProductRepository implements ProductRepositoryInterface
         parameters.put("prd_price", p.getPrd_price());
         parameters.put("prd_cmp", p.getPrd_cmp());
         parameters.put("prd_type", p.getPrd_type());
-        parameters.put("prd_img", p.getPrd_img());
-        parameters.put("realfile", p.getRealfile());
         parameters.put("prd_ment", p.getPrd_ment());
-        parameters.put("prd_stock", p.getPrd_stock());
+        parameters.put("prd_sales", p.getPrd_sales());
 
         // uid 설정
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
