@@ -115,7 +115,7 @@
 =============================-->
 <section class="ad-post bg-gray py-5">
     <div class="container">
-        <form action="product/new" method="post">
+        <form action="newproduct" method="post">
             <!-- Post Your ad start -->
             <fieldset class="border border-gary p-4 mb-5">
                     <div class="row">
@@ -124,43 +124,44 @@
                         </div>
                         <div class="col-lg-6">
                             <h6 class="font-weight-bold pt-4 pb-1">상품명:</h6>
-                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품명을 입력하시오">
+                            <input type="text" id="prd_name" name="prd_name" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품명을 입력하시오">
                             <h6 class="font-weight-bold pt-4 pb-1">상품 종류:</h6>
-                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 종류를 입력하시오">
+                            <input type="text" id="prd_type" name="prd_type" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 종류를 입력하시오">
                             <h6 class="font-weight-bold pt-4 pb-1">상품 업체:</h6>
-                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 업체를 입력하시오">
+                            <input type="text" id="prd_cmp" name="prd_cmp" class="border w-100 p-2 bg-white text-capitalize" placeholder="상품의 업체를 입력하시오">
                             <h6 class="font-weight-bold pt-4 pb-1">상품 내용:</h6>
-                            <textarea name="" id="" class="border p-3 w-100" rows="7" placeholder="상품에 대해 설명해주세요"></textarea>
+                            <textarea name="prd_ment" id="prd_ment" class="border p-3 w-100" rows="7" placeholder="상품에 대해 설명해주세요"></textarea>
                         </div>
                         <div class="col-lg-6">
                             <h6 class="font-weight-bold pt-4 pb-1">상품 수량:</h6>
-                            <select name="" id="inputGroupSelect" class="w-100">
-                                <option value="1">1개</option>
-                                <option value="2">2개</option>
-                                <option value="3">3개</option>
-                                <option value="4">4개</option>
-                                <option value="5">5개</option>
-                                <option value="6">6개</option>
-                                <option value="7">7개</option>
-                                <option value="8">8개</option>
-                            </select>
+                                <input id ="prd_sales" type="number" name="prd_sales" >
+<!--                            <select name="" id="inputGroupSelect" class="w-100">-->
+<!--                                <option value="1">1개</option>-->
+<!--                                <option value="2">2개</option>-->
+<!--                                <option value="3">3개</option>-->
+<!--                                <option value="4">4개</option>-->
+<!--                                <option value="5">5개</option>-->
+<!--                                <option value="6">6개</option>-->
+<!--                                <option value="7">7개</option>-->
+<!--                                <option value="8">8개</option>-->
+<!--                            </select>-->
                             <div class="price">
                                 <h6 class="font-weight-bold pt-4 pb-1">가격:</h6>
                                 <div class="row px-3">
                                     <div class="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
-                                        <input type="text" name="price" class="border-0 py-2 w-100 price" placeholder="Price"
-                                            id="가격">
+                                        <input type="number" name="prd_price" class="border-0 py-2 w-100 price" placeholder="Price"
+                                            id="prd_price">
                                     </div>
                                 </div>
                             </div>
                             <div class="choose-file text-center my-4 py-4 rounded">
-                                <label for="file-upload">
-                                    <span class="d-block font-weight-bold text-dark">이미지 파일을 업로드하세요</span>
-                                    <span class="d-block">or</span>
-                                    <span class="d-block btn bg-primary text-white my-3 select-files">파일 선택</span>
-                                    <span class="d-block">최대 파일 업로드 사이즈: 500 KB</span>
-                                    <input type="file" class="form-control-file d-none" id="file-upload" name="file">
-                                </label>
+<!--                                <label for="file-upload">-->
+<!--                                    <span class="d-block font-weight-bold text-dark">이미지 파일을 업로드하세요</span>-->
+<!--                                    <span class="d-block">or</span>-->
+<!--                                    <span class="d-block btn bg-primary text-white my-3 select-files">파일 선택</span>-->
+<!--                                    <span class="d-block">최대 파일 업로드 사이즈: 500 KB</span>-->
+<!--                                    <input type="file" class="form-control-file d-none" id="file-upload" name="file">-->
+<!--                                </label>-->
                             </div>
                         </div>
                     </div>
