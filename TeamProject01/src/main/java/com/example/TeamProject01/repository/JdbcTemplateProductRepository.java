@@ -1,6 +1,7 @@
 package com.example.TeamProject01.repository;
 
 import com.example.TeamProject01.Domain.Product;
+import com.example.TeamProject01.Domain.ProductImage;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
@@ -37,5 +38,19 @@ public class JdbcTemplateProductRepository implements ProductRepositoryInterface
         p.setUid(key.intValue());
         return p;
 
+    }
+
+    @Override
+    public void saveProductImage(ProductImage pi) {
+        SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
+        jdbcInsert.withTableName("image");
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("uuid", pi.getUuid());
+        parameters.put("imgname", pi.getImgname());
+        parameters.put("contenttype", pi.getContenttype());
+        parameters.put("uid", pi.getUid());
+
+        jdbcInsert.execute(parameters);
     }
 }
