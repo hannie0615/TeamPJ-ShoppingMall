@@ -47,7 +47,7 @@ create table order (
                            FOREIGN KEY(deliv_num) REFERENCES delivery(uid)
 );
 
-# <!--주문상품-->
+<!--주문상품-->
 create table ord_prd (
                          uid INT AUTO_INCREMENT PRIMARY KEY,
                          fk_num varchar(15) NOT NULL,
@@ -58,7 +58,17 @@ create table ord_prd (
                              FOREIGN KEY(fk_adm) REFERENCES member(fk_adm)
 );
 
-# <!--상품관리-->
+
+<!-- 이미지 -->
+create table image(
+    -> uuid INT PRIMARY KEY,
+    -> imgname VARCHAR(30),
+    -> contenttype VARCHAR(30),
+    -> uid INT
+    -> );
+
+
+<!--상품관리-->
 create table product (
                          uid INT AUTO_INCREMENT PRIMARY KEY,
                          fk_ord_num INT NOT NULL,
@@ -77,13 +87,13 @@ create table product (
                              FOREIGN KEY(fk_cate) REFERENCES ctgprd(uid)
 );
 
-# <!--카테고리별 상품관리-->
+<!--카테고리별 상품관리-->
 create table ctgprd (
                         uid INT AUTO_INCREMENT PRIMARY KEY,
                         c_name varchar(30) NOT NULL,
 );
 
-# <!--문의게시판-->
+<!--문의게시판-->
 create table inquire_board (
                                uid INT AUTO_INCREMENT PRIMARY KEY,
                                fk_deliv varchar(15) NOT NULL,
@@ -98,7 +108,7 @@ create table inquire_board (
                                FOREIGN KEY(fk_deliv) REFERENCES order(uid)
 );
 
-# <!--장바구니-->
+<!--장바구니-->
 create table cart_prd (
                           uid INT AUTO_INCREMENT PRIMARY KEY,
                           fk_member INT NOT NULL,
