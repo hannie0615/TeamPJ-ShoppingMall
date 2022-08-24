@@ -1,6 +1,7 @@
 package com.example.TeamProject01.repository;
 
 import com.example.TeamProject01.Domain.Inquiry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -37,11 +38,12 @@ public class JdbcTemplateInquiryRepository implements InquiryRepositoryInterface
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
         i.setUid(key.intValue());
         return i;
+
     }
 
     @Override
     public List<Inquiry> findAll() {
-        return new ArrayList<>();
+        return jdbcTemplate.query("SELECT * FROM shoppingmall.inquiry_board", inquiryRowMapper());
     }
 
     private RowMapper<Inquiry> inquiryRowMapper() {

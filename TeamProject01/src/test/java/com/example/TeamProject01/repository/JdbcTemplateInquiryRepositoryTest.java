@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+/*
 public class JdbcTemplateInquiryRepositoryTest {
 
-    InquiryRepositoryInterface repository = new JdbcTemplateInquiryRepository();
+    JdbcTemplateInquiryRepository repository = new JdbcTemplateInquiryRepository();
 
     @Test
     public void JdbcTemplateInquiryRepositoryTest(){
@@ -21,3 +21,4 @@ public class JdbcTemplateInquiryRepositoryTest {
         //insert
     }
 }
+*/
