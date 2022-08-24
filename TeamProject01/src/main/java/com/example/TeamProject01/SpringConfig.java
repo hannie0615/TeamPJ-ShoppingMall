@@ -1,7 +1,10 @@
 package com.example.TeamProject01;
 
+import com.example.TeamProject01.repository.InquiryRepositoryInterface;
+import com.example.TeamProject01.repository.JdbcTemplateInquiryRepository;
 import com.example.TeamProject01.repository.JdbcTemplateMemberRepository;
 import com.example.TeamProject01.repository.MemberRepositoryInterface;
+import com.example.TeamProject01.service.InquiryService;
 import com.example.TeamProject01.service.MemberService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +13,6 @@ import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
-
 
     private DataSource dataSource;
 
@@ -33,5 +35,15 @@ public class SpringConfig {
     @Bean
     public MemberRepositoryInterface memberRepositoryInterface() {
         return new JdbcTemplateMemberRepository(dataSource);
+    }
+
+    @Bean
+    public InquiryService inquiryService() {
+        return new InquiryService(inquiryRepositoryInterface());
+    }
+
+    @Bean
+    public InquiryRepositoryInterface inquiryRepositoryInterface() {
+        return new JdbcTemplateInquiryRepository(dataSource);
     }
 }
