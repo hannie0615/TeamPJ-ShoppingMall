@@ -1,11 +1,9 @@
 package com.example.TeamProject01;
 
-import com.example.TeamProject01.repository.InquiryRepositoryInterface;
-import com.example.TeamProject01.repository.JdbcTemplateInquiryRepository;
-import com.example.TeamProject01.repository.JdbcTemplateMemberRepository;
-import com.example.TeamProject01.repository.MemberRepositoryInterface;
+import com.example.TeamProject01.repository.*;
 import com.example.TeamProject01.service.InquiryService;
 import com.example.TeamProject01.service.MemberService;
+import com.example.TeamProject01.service.ProductService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -45,5 +43,15 @@ public class SpringConfig {
     @Bean
     public InquiryRepositoryInterface inquiryRepositoryInterface() {
         return new JdbcTemplateInquiryRepository(dataSource);
+    }
+
+    @Bean
+    public ProductService productService() {
+        return new ProductService(productRepositoryInterface());
+    }
+    // 2. 이 인터페이스함수를 MemberService 에 포함을 하도록 한다.
+    @Bean
+    public ProductRepositoryInterface productRepositoryInterface() {
+        return new JdbcTemplateProductRepository(dataSource);
     }
 }
