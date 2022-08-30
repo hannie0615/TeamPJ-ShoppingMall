@@ -13,18 +13,18 @@
     <!-- PLUGINS CSS STYLE -->
     <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap-slider.css}">
     <!-- Font Awesome -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link th:href="@{/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link th:href="@{/plugins/slick-carousel/slick/slick.css}" rel="stylesheet">
+    <link th:href="@{/plugins/slick-carousel/slick/slick-theme.css}" rel="stylesheet">
     <!-- Fancy Box -->
-    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link th:href="@{/plugins/fancybox/jquery.fancybox.pack.css}" rel="stylesheet">
+    <link th:href="@{/plugins/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
     <!-- CUSTOM CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -100,7 +100,7 @@
                                 <a class="nav-link login-button" href="/register">회원가입</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white add-button" href="/addlist">
+                                <a class="nav-link text-white add-button" th:href="@{/addlist}" th:method="POST">
                                     <i class="fa fa-plus-circle"></i>Add Goods</a>
                             </li>
                         </ul>
