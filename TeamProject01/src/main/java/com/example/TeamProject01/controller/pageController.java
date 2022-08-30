@@ -34,12 +34,12 @@ public class pageController {
         return "contact/aboutUs";
     }
 
-    @PostMapping("/register")
+    @GetMapping("/register")
     public String goRegister() {
         return "member/register";
     }
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public String goLogin() {
         return "member/login";
     }
@@ -68,7 +68,7 @@ public class pageController {
     }
 
     // 상품등록
-    @PostMapping("/addlist")
+    @GetMapping("/addlist")
     public String goAddList(){
         return "product/addProduct";
     }
