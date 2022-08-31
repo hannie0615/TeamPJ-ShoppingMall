@@ -10,11 +10,11 @@ import javax.validation.constraints.NotBlank;
 public class ProductImage {
 
     private String uuid;
-    private int uid;
+    private int uid; //product number
     private String imgname;
     private String contenttype;
 
-    public ProductImage(String uuid, String imageName, String contentType, @NotBlank int uid){
+    public ProductImage(String uuid, String imgname, String contenttype, @NotBlank int uid){
 
         this.uuid = uuid;
         this.imgname = imgname;
