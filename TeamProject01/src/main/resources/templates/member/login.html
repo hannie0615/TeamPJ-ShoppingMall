@@ -52,10 +52,16 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <h3 class="bg-gray p-4">Login Now</h3>
-                    <form action="#">
+                    <form th:action="@{/login}" method="post">
+                        <div th:if="${param.error}" class="mt-4 mb-0 alert alert-danger mt-2" role="alert">
+                            Invalid username and password.
+                        </div>
+                        <div th:if="${param.logout}" class="mt-4 mb-0 alert alert-primary" role="alert">
+                            You have been logged out.
+                        </div>
                         <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
+                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2" id="id01" name="username">
+                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2" id="pwd01" name="password">
                             <div class="loggedin-forgot">
                                 <input type="checkbox" id="keep-me-logged-in">
                                 <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>

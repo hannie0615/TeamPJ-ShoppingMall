@@ -24,16 +24,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/","/css/**","/images/**","/js/**","/plugins/**","/scss/**",
+                    .antMatchers("/","/css/**","/images/**","/js/**","/plugins/**","/scss/**",
                         "/register/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
+                    .anyRequest().authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/member/login")
-                .permitAll()
-                .and()
+                .loginPage("/login")
+                    .permitAll()
+                    .and()
                 .logout()
-                .permitAll();
+                    .permitAll();
     }
 
     @Autowired

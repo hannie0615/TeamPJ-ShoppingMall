@@ -44,6 +44,11 @@ public class pageController {
         return "member/login";
     }
 
+    @PostMapping("/login")
+    public String DoAuthorize() {
+        return "";
+    }
+
     @GetMapping("/test")
     public String goTest() {
         return "insertTest";
