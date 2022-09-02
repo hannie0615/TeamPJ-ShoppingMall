@@ -1,17 +1,44 @@
+# <!--회원관리 -->
+CREATE TABLE `shoppingmall`.`member` (
+                                         `uid` BIGINT NOT NULL AUTO_INCREMENT,
+                                         `email01` VARCHAR(30) NOT NULL,
+                                         `id01` VARCHAR(15) NOT NULL,
+                                         `pwd01` VARCHAR(100) NOT NULL,
+                                         `name01` VARCHAR(20) NOT NULL,
+                                         `n_name` VARCHAR(20) NOT NULL,
+                                         `addr01` VARCHAR(10) NOT NULL,
+                                         `addr02` VARCHAR(50) NOT NULL,
+                                         `addr03` VARCHAR(50) NOT NULL,
+                                         `r_date` DATE NOT NULL,
+                                         `p_time` BIGINT NOT NULL,
+                                         `enabled` BIT(1) NOT NULL,
+                                         PRIMARY KEY (`uid`),
+                                         UNIQUE INDEX `id01_UNIQUE` (`id01` ASC) VISIBLE
+);
 
-# <!--회원관리-->
-create table member (
-                        uid INT AUTO_INCREMENT PRIMARY KEY,
-                        email01 varchar(30) NOT NULL,
-                        id01 varchar(15) NOT NULL,
-                        pwd01 varchar(20) NOT NULL,
-                        name01 varchar(20) NOT NULL,
-                        n_name varchar(20) NOT NULL,
-                        addr01 varchar(10) NOT NULL,
-                        addr02 varchar(20) NOT NULL,
-                        addr03 varchar(50) NOT NULL,
-                        r_date01 date NOT NULL,
-                        p_time bigint NOT NULL
+# <!-- 권한 테이블 -->
+CREATE TABLE `shoppingmall`.`role` (
+                                       `id` BIGINT NOT NULL AUTO_INCREMENT,
+                                       `name` VARCHAR(50) NOT NULL,
+                                       PRIMARY KEY (`id`)
+);
+
+# <!-- Many to Many Mapping / 회원테이블, 권한테이블 -->
+CREATE TABLE `shoppingmall`.`member_role` (
+                                              `member_id` BIGINT NOT NULL,
+                                              `role_id` BIGINT NOT NULL,
+                                              PRIMARY KEY (`member_id`, `role_id`),
+                                              INDEX `FK_member_role_role_idx` (`role_id` ASC) VISIBLE,
+                                              CONSTRAINT `FK_member_role_member`
+                                                  FOREIGN KEY (`member_id`)
+                                                      REFERENCES `shoppingmall`.`member` (`uid`)
+                                                      ON DELETE RESTRICT
+                                                      ON UPDATE RESTRICT,
+                                              CONSTRAINT `FK_member_role_role`
+                                                  FOREIGN KEY (`role_id`)
+                                                      REFERENCES `shoppingmall`.`role` (`id`)
+                                                      ON DELETE RESTRICT
+                                                      ON UPDATE RESTRICT
 );
 
 # <!--후기게시판-->
