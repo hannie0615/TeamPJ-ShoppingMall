@@ -9,7 +9,7 @@ CREATE TABLE `shoppingmall`.`member` (
                                          `addr01` VARCHAR(10) NOT NULL,
                                          `addr02` VARCHAR(50) NOT NULL,
                                          `addr03` VARCHAR(50) NOT NULL,
-                                         `r_date` DATE NOT NULL,
+                                         `r_date01` DATE NOT NULL,
                                          `p_time` BIGINT NOT NULL,
                                          `enabled` BIT(1) NOT NULL,
                                          PRIMARY KEY (`uid`),
@@ -40,6 +40,9 @@ CREATE TABLE `shoppingmall`.`member_role` (
                                                       ON DELETE RESTRICT
                                                       ON UPDATE RESTRICT
 );
+
+# <!-- 초기 권한 설정 -->
+INSERT INTO `shoppingmall`.`role` (`name`) VALUES ('ROLE_USER');
 
 # <!--후기게시판-->
 create table prd_rev (
