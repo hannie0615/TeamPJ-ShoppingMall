@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head(title)">
 
     <!-- SITE TITTLE -->
@@ -94,15 +94,21 @@
                         <ul class="navbar-nav ml-auto mt-10">
                             <!-- 5. 로그인, 상품 추가 경로 설정해주기 -->
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="/login">로그인</a>
+                                <a class="nav-link login-button" th:href="@{/login}"
+                                   sec:authorize="!isAuthenticated()">로그인</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="/register">회원가입</a>
+                                <a class="nav-link login-button" th:href="@{/register}"
+                                   sec:authorize="!isAuthenticated()">회원가입</a>
                             </li>
+                            <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
+                                <span class="text-black ml-2" sec:authentication="name">사용자</span>님!&nbsp&nbsp환영합니다!
+                                <button class="btn btn-secondary py-2 px-2 mx-3 my-2 my-sm-0" type="submit">Logout</button>
                             <li class="nav-item">
-                                <a class="nav-link text-white add-button" th:href="@{/addlist}" th:method="POST">
+                                <a class="nav-link text-white add-button" th:href="@{/addlist}">
                                     <i class="fa fa-plus-circle"></i>Add Goods</a>
                             </li>
+                            </form>
                         </ul>
                     </div>
                 </nav>
