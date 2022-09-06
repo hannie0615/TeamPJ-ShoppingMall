@@ -49,7 +49,7 @@ public class SpringConfig {
     public ProductService productService() {
         return new ProductService(productRepositoryInterface());
     }
-    // 2. 이 인터페이스함수를 MemberService 에 포함을 하도록 한다.
+
     @Bean
     public ProductRepositoryInterface productRepositoryInterface() {
         return new JdbcTemplateProductRepository(dataSource);
