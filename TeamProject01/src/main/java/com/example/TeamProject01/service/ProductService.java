@@ -26,6 +26,10 @@ public class ProductService {
         return productRepository.save(p);
     }
 
+    public void uploadImage(ProductImage pi){
+        repository.saveProductImage(pi);
+    }
+
     @Autowired
     public ProductService(ProductRepositoryInterface repository){
         this.repository = repository;

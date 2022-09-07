@@ -43,13 +43,13 @@ public class JdbcTemplateProductRepository implements ProductRepositoryInterface
     @Override
     public void saveProductImage(ProductImage pi) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
-        jdbcInsert.withTableName("image");
+        jdbcInsert.withTableName("product_img");
 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("uuid", pi.getUuid());
         parameters.put("imgname", pi.getImgname());
         parameters.put("contenttype", pi.getContenttype());
-        parameters.put("uid", pi.getUid());
+        parameters.put("productid", pi.getProductid());
 
         jdbcInsert.execute(parameters);
     }

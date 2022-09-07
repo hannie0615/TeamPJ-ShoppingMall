@@ -107,6 +107,18 @@ create table product (
                              FOREIGN KEY(fk_cate) REFERENCES ctgprd(uid)
 );
 
+# <!--상품 이미지-->
+create table product_img
+(
+    uuid VARCHAR(50),
+    imgname VARCHAR(30),
+    contenttype VARCHAR(30),
+    productid INT,
+    foreign key(productid) references product(uid) on update cascade on delete restrict
+);
+
+
+
 # <!--카테고리별 상품관리-->
 create table ctgprd (
                         uid INT AUTO_INCREMENT PRIMARY KEY,
