@@ -34,19 +34,11 @@ public class ProductController {
     @PostMapping
     public String createProduct(@RequestParam MultipartFile[] uploadfile, Model model, @Valid Product p) throws ParseException, IOException {
 
-//        Product p = new Product();
-//
-//        p.setPrd_name(pf.getPrd_name());
-//        p.setPrd_price(pf.getPrd_price());
-//        p.setPrd_cmp(pf.getPrd_cmp());
-//        p.setPrd_type(pf.getPrd_type());
-//        p.setPrd_ment(pf.getPrd_ment());
-//        p.setPrd_sales(pf.getPrd_sales());
+        // product DB에 넣기
+        service.save(p);
 
-        service.save(p); // product DB에 넣기
-
+        // product Img DB에 넣기
         List<ProductImage> list = new ArrayList<>();
-
         for(MultipartFile file : uploadfile){
             if(!file.isEmpty()){
                 // uuid, imgname, contenttype, uid
@@ -54,9 +46,12 @@ public class ProductController {
                         UUID.randomUUID().toString(),
                         file.getOriginalFilename(),
                         file.getContentType(),
-                        p.getUid());
+                        p.getUid() // product의 uid를 productid로 가져오기.
+                );
                 list.add(pi);
+                service.uploadImage(pi);
 
+                // pc 로컬 위치에 저장
                 File newFile = new File(pi.getUuid()+ "_" +pi.getImgname());
                 file.transferTo(newFile);
             }

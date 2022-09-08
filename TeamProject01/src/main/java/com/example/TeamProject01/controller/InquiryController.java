@@ -45,4 +45,5 @@ public class InquiryController {
         service.join(i);
         return "myPage/myInquiry";
     }
+
 }

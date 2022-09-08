@@ -44,7 +44,7 @@
 
 <section class="ad-post bg-gray py-5">
     <div class="container">
-        <form th:action="@{/newproduct}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/newproduct}" method="post" id="newproduct" enctype="multipart/form-data">
             <!-- Post Your ad start -->
             <fieldset class="border border-gary p-4 mb-5">
                 <div class="row">
@@ -100,12 +100,12 @@
 
             <!-- submit button -->
             <div class="checkbox d-inline-flex">
-                <input type="checkbox" id="terms-&-condition" class="mt-1">
-                <label for="terms-&-condition" class="ml-2">
-                    <span> <a class="text-success" href="terms-condition.html">게시 규칙에 동의해주십시오.</a></span>
+                <input type="checkbox" id="Agree" class="mt-1" onclick="checkBoxHandler()">
+                <label for="Agree" class="ml-2">
+                    <span> <a class="text-success">게시 규칙에 동의해주십시오.</a></span>
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary d-block mt-2">상품 등록하기</button>
+            <button type="submit" class="btn btn-primary d-block mt-2" onclick="return reg_add_product_Handler()">상품 등록하기</button>
         </form>
     </div>
 </section>
@@ -135,6 +135,10 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
 <script src="plugins/google-map/gmap.js"></script>
 <script src="js/script.js"></script>
+<!-- javascript 추가 -->
+<script src="js/addproduct.js"></script>
+<script type="text/javascript"></script>
+
 
 </body>
 <script src="js/aTagPostJs.js"></script>
