@@ -1,4 +1,4 @@
-# 중고 명품 쇼핑몰(Used luxury shopping mall)
+# 중고 쇼핑몰(Used shopping mall)
 
 <h3>1. Concept(개념): 중고명품 사이트 개발</h3>
 
